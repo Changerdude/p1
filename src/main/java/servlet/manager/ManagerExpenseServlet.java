@@ -24,9 +24,9 @@ public class ManagerExpenseServlet extends HttpServlet {
         ExpenseRequest currentExpense = expenseDao.getExpenseById(Integer.parseInt(request.getParameter("id")));
 
         request.getRequestDispatcher("pageHeader.html").include(request, response);
-        out.println("<h2>Expense from " + currentExpense.getOwner().getName() + ".</h2>");
+        out.println("<h2>Expense from " + currentExpense.getOwner().getName() + "</h2>");
         out.println("<table class='table table-bordered'>");
-        out.println("<thead><tr><th>For</th><th>Description</th<<th>Amount</th><th>Status</th><th>Time submitted</th></tr></thead>");
+        out.println("<thead><tr><th>For</th><th>Description</th><th>Amount</th><th>Status</th><th>Time submitted</th></tr></thead>");
         out.println("<tbody id='myTable'>");
         out.println("<tr>");
         out.println("<td>" + currentExpense.getName() + "</td>");
